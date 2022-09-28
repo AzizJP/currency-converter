@@ -19,6 +19,6 @@
 
 **GitHub**
 
-* [Ссылка на проект в GitHub](https://github.com/AzizJP/currency-converter)
+* [Ссылка на проект в GitHub](https://azizjp.github.io/currency-converter/)
 
 <!-- **Технологии применяемые в проекте** -->
