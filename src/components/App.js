@@ -1,7 +1,22 @@
+import { useEffect, useState } from "react";
+import Api from "../utils/Api";
 import { Block } from "./Block";
 import Header from "./Header";
 
 function App() {
+  const [currencyRates, setCurrencyRates] = useState({});
+
+  useEffect(() => {
+    Api()
+      .then((data) => {
+        let rates = data.Valute;
+        setCurrencyRates(rates);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   return (
     <div className="page">
       <div className="container">
