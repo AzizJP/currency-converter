@@ -1,15 +1,19 @@
 import { Block } from "./Block";
+import Header from "./Header";
 
 function App() {
   return (
     <div className="page">
       <div className="container">
-        <Block
-          value={0}
-          currency="RUB"
-          onChangeCurrency={(cur) => console.log(cur)}
-        />
-        <Block value={0} currency="KZT" />
+        <Header />
+        <section className="conversion-blocks">
+          <Block
+            value={0}
+            currency="RUB"
+            onChangeCurrency={(cur) => console.log(cur)}
+          />
+          <Block value={0} currency="KZT" />
+        </section>
       </div>
     </div>
   );
