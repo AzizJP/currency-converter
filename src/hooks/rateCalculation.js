@@ -4,19 +4,8 @@ export default function rateCalculation(
   currencyRates,
   value
 ) {
-  return firstFormCurrency === secondFormCurrency
-    ? value
-    : firstFormCurrency === "RUB"
-    ? (currencyRates[secondFormCurrency].Value /
-        currencyRates[secondFormCurrency].Nominal) *
-      value
-    : secondFormCurrency === "RUB"
-    ? (currencyRates[firstFormCurrency].Value /
-        currencyRates[firstFormCurrency].Nominal) *
-      value
-    : (currencyRates[firstFormCurrency].Value /
-        currencyRates[firstFormCurrency].Nominal /
-        (currencyRates[secondFormCurrency].Value /
-          currencyRates[secondFormCurrency].Nominal)) *
-      value;
+  return (
+    (currencyRates[firstFormCurrency] / currencyRates[secondFormCurrency]) *
+    value
+  ).toFixed(3);
 }
