@@ -3,15 +3,15 @@ const defaultCurrencies = ["RUB", "USD", "KZT"];
 export const Block = ({ value, currency, onChangeValue, onChangeCurrency }) => (
   <form className="conversion-block">
     <ul className="conversion-block__currencies">
-      {defaultCurrencies.map((cur) => (
+      {defaultCurrencies.map((item) => (
         <li
-          onClick={() => onChangeCurrency(cur)}
+          onClick={() => onChangeCurrency(item)}
           className={`conversion-block__currency ${
-            currency === cur ? "active" : ""
+            currency === item ? "active" : ""
           }`}
-          key={cur}
+          key={item}
         >
-          {cur}
+          {item}
         </li>
       ))}
       <li className="conversion-block__currency">
@@ -30,7 +30,6 @@ export const Block = ({ value, currency, onChangeValue, onChangeCurrency }) => (
       onChange={(evt) => onChangeValue(evt.target.value)}
       value={value}
       type="number"
-      placeholder={"Введите значение"}
       className="conversion-block__input"
     />
   </form>
