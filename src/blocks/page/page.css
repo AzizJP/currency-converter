@@ -1,5 +1,9 @@
 .page {
   background-color: #333d69;
   font-family: "Inter", system-ui !important;
+  color: white;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

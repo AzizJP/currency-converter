@@ -5,7 +5,19 @@
   font-weight: bold;
   letter-spacing: 1.3px;
   outline: none;
-  margin-top: 1.25rem;
+  margin-top: 0.8rem;
   border-radius: 0.3rem;
   width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+  .conversion-block__input {
+    margin-top: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .conversion-block__input {
+    margin-top: 1.5rem;
+  }
 }

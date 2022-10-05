@@ -1,10 +1,13 @@
 .conversion-block__currency {
   display: inline-flex;
-  padding: 0.6rem 1.2rem;
+  padding: 0.6rem 0;
   border-right: 1px solid rgba(0, 0, 0, 0.05);
   cursor: pointer;
   justify-content: center;
   flex: 1;
+  color: black;
+  font-size: 0.8rem;
+  line-height: 1rem;
 }
 
 .conversion-block__currency:hover {
@@ -21,4 +24,19 @@
   align-items: center;
   flex: 0 0 2rem;
   border-right: 0;
+}
+
+@media screen and (min-width: 600px) {
+  .conversion-block__currency {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    line-height: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .conversion-block__currency {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+  }
 }
