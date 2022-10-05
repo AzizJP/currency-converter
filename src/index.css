@@ -1,2 +1,18 @@
 /*vendor*/
 @import url(../src/vendor/normalize.css);
+
+/*fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/*page*/
+@import url(./blocks/page/page.css);
+
+/*container*/
+@import url(./blocks/container/container.css);
+
+/*conversion-block*/
+@import url(./blocks/conversion-block/conversion-block.css);
+@import url(./blocks/conversion-block/__currencies/conversion-block__currencies.css);
+@import url(./blocks/conversion-block/__currency/conversion-block__currency.css);
+@import url(./blocks/conversion-block/__switch/conversion-block__switch.css);
+@import url(./blocks/conversion-block/__input/conversion-block__input.css);

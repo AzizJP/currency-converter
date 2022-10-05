@@ -1,0 +1,24 @@
+.conversion-block__currency {
+  display: inline-flex;
+  padding: 0.6rem 1.2rem;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  justify-content: center;
+  flex: 1;
+}
+
+.conversion-block__currency:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.conversion-block__currency.active {
+  background-color: #16b67f;
+  color: #fff;
+}
+
+.conversion-block__currency:last-of-type {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 2rem;
+  border-right: 0;
+}

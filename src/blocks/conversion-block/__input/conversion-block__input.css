@@ -1,0 +1,11 @@
+.conversion-block__input {
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 1.3px;
+  outline: none;
+  margin-top: 1.25rem;
+  border-radius: 0.3rem;
+  width: 100%;
+}

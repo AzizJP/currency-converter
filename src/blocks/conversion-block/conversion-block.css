@@ -1,0 +1,4 @@
+.conversion-block {
+  display: flex;
+  flex-direction: column;
+}
