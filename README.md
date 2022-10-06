@@ -27,6 +27,9 @@
 В проекте применяются:
 * HTML5/CSS3
 * React.js/JavaScript
+* Fetch запрос на публичный апи
+* React-хуки: useState, useRef, useEffect, useCallback
+* Компонент высшего порядка React.memo
 
 Функционал:
 * Конвертирование при выборе валют
