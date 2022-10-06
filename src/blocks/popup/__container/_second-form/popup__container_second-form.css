@@ -1,0 +1,16 @@
+.popup__container_second-form {
+  top: 16rem;
+}
+
+@media screen and (min-width: 600px) {
+  .popup__container_second-form {
+    top: 16.6rem;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .popup__container_second-form {
+    top: 3.5rem;
+    right: 0;
+  }
+}

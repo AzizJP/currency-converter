@@ -24,3 +24,11 @@
 @import url(./blocks/conversion-block/__currency/_active/conversion-block__currency_active.css);
 @import url(./blocks/conversion-block/__currency-change/_active/conversion-block__currency-change_active.css);
 @import url(./blocks/conversion-block/__input/conversion-block__input.css);
+
+/*popup*/
+@import url(./blocks/popup/popup.css);
+@import url(./blocks/popup/_active/popup_acitve.css);
+@import url(./blocks/popup/__container/popup__container.css);
+@import url(./blocks/popup/__container/_second-form/popup__container_second-form.css);
+@import url(./blocks/popup/__list/popup__list.css);
+@import url(./blocks/popup/__currency-button/popup__currency-button.css);

@@ -1,0 +1,7 @@
+.popup__list {
+  display: grid;
+  grid: auto-flow / 1fr 1fr 1fr;
+  margin: 0;
+  padding: 1rem;
+  color: black;
+}

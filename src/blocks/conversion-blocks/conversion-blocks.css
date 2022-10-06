@@ -1,12 +1,13 @@
 .conversion-blocks {
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 1rem 0 0;
   background-color: #fff;
   padding: 0;
-  box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0.625rem 1.25rem rgba(255, 255, 255, 0.3);
   border-radius: 1rem;
   width: 100%;
 }

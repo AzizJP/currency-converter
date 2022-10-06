@@ -1,0 +1,29 @@
+.popup__currency-button {
+  padding: 0.6rem 0.6rem;
+  font-size: 0.8rem;
+  line-height: 1rem;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.8rem;
+}
+
+@media screen and (min-width: 600px) {
+  .popup__currency-button {
+    font-size: 1rem;
+    line-height: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .popup__currency-button:hover {
+    background-color: rgba(0, 50, 255, 0.1);
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .popup__currency-button {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+  }
+}

@@ -4,6 +4,7 @@ import rateCalculation from "../hooks/rateCalculation";
 import Api from "../utils/Api";
 import Block from "./Block";
 import Header from "./Header";
+import PopupWithCurrencies from "./PopupWithCurrencies";
 
 function App() {
   const [firstFormCurrency, setFirstFormCurrency] = useState("RUB");
@@ -18,6 +19,14 @@ function App() {
   ] = useState(false);
 
   const currencyRatesRef = useRef({});
+
+  const closeAllPopups = useCallback(() => {
+    setIsCurrencyChangeFirstFormButton(false);
+    setIsCurrencyChangeSecondFormButton(false);
+  }, []);
+
+  const isOpen =
+    isCurrencyChangeFirstFormButton || isCurrencyChangeSecondFormButton;
 
   useEffect(() => {
     Api()
@@ -34,6 +43,21 @@ function App() {
   useEffect(() => {
     onChangeFirstFormValue(firstFormValue);
   }, [secondFormCurrency, firstFormCurrency]);
+
+  useEffect(() => {
+    const closeByEscape = (evt) => {
+      if (evt.key === "Escape") {
+        if (isOpen) {
+          closeAllPopups();
+        }
+      }
+    };
+    if (isOpen) {
+      document.addEventListener("keydown", closeByEscape);
+    } else {
+      document.removeEventListener("keydown", closeByEscape);
+    }
+  }, [isOpen, closeAllPopups]);
 
   const handleCurrencyChangeFirstFormButton = useCallback(() => {
     setIsCurrencyChangeFirstFormButton(!isCurrencyChangeFirstFormButton);
@@ -103,6 +127,15 @@ function App() {
             onChangeValue={onChangeSecondFormValue}
             onCurrencyChangeButton={handleCurrencyChangeSecondFormButton}
             isCurrencyChangeButton={isCurrencyChangeSecondFormButton}
+          />
+          <PopupWithCurrencies
+            currensies={currencyRatesRef.current}
+            isOpen={isCurrencyChangeFirstFormButton}
+          />
+          <PopupWithCurrencies
+            currensies={currencyRatesRef.current}
+            isOpen={isCurrencyChangeSecondFormButton}
+            isSecondFormOpen={isCurrencyChangeSecondFormButton}
           />
         </section>
       </div>
