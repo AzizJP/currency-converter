@@ -1,0 +1,7 @@
+.conversion-block__currency-change {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 2.5rem;
+  border-right: 0;
+  font-size: 1.2rem;
+}

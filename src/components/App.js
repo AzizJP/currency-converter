@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { CgArrowsExchangeAltV } from "react-icons/cg";
 import rateCalculation from "../hooks/rateCalculation";
 import Api from "../utils/Api";
-import { Block } from "./Block";
+import Block from "./Block";
 import Header from "./Header";
 
 function App() {
@@ -9,6 +10,12 @@ function App() {
   const [secondFormCurrency, setSecondFormCurrency] = useState("USD");
   const [firstFormValue, setFirstFormValue] = useState(0);
   const [secondFormValue, setSecondFormValue] = useState(0);
+  const [isCurrencyChangeFirstFormButton, setIsCurrencyChangeFirstFormButton] =
+    useState(false);
+  const [
+    isCurrencyChangeSecondFormButton,
+    setIsCurrencyChangeSecondFormButton,
+  ] = useState(false);
 
   const currencyRatesRef = useRef({});
 
@@ -23,6 +30,13 @@ function App() {
         console.log(err);
       });
   }, []);
+
+  const handleCurrencyChangeFirstFormButton = useCallback(() => {
+    setIsCurrencyChangeFirstFormButton(!isCurrencyChangeFirstFormButton);
+  }, [isCurrencyChangeFirstFormButton]);
+  const handleCurrencyChangeSecondFormButton = useCallback(() => {
+    setIsCurrencyChangeSecondFormButton(!isCurrencyChangeSecondFormButton);
+  }, [isCurrencyChangeSecondFormButton]);
 
   const onChangeFirstFormValue = useCallback(
     (value) => {
@@ -71,12 +85,19 @@ function App() {
             currency={firstFormCurrency}
             onChangeCurrency={setFirstFormCurrency}
             onChangeValue={onChangeFirstFormValue}
+            onCurrencyChangeButton={handleCurrencyChangeFirstFormButton}
+            isCurrencyChangeButton={isCurrencyChangeFirstFormButton}
           />
+          <button type="button" className="conversion-blocks__switch">
+            <CgArrowsExchangeAltV />
+          </button>
           <Block
             value={secondFormValue}
             currency={secondFormCurrency}
             onChangeCurrency={setSecondFormCurrency}
             onChangeValue={onChangeSecondFormValue}
+            onCurrencyChangeButton={handleCurrencyChangeSecondFormButton}
+            isCurrencyChangeButton={isCurrencyChangeSecondFormButton}
           />
         </section>
       </div>

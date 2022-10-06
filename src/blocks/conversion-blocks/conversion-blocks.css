@@ -1,6 +1,8 @@
 .conversion-blocks {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 1rem 0 0;
   background-color: #fff;
   padding: 0;
@@ -18,5 +20,6 @@
 @media screen and (min-width: 1280px) {
   .conversion-blocks {
     margin-top: 3rem;
+    flex-direction: row;
   }
 }

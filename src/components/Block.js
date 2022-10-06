@@ -1,31 +1,42 @@
+import { memo } from "react";
+import { IoIosArrowDown } from "react-icons/io";
+
 const defaultCurrencies = ["RUB", "USD", "KZT"];
 
-export const Block = ({ value, currency, onChangeValue, onChangeCurrency }) => {
+function Block({
+  value,
+  currency,
+  onChangeValue,
+  onChangeCurrency,
+  onCurrencyChangeButton,
+  isCurrencyChangeButton,
+}) {
   return (
     <form className="conversion-block">
       <ul className="conversion-block__currencies">
         {defaultCurrencies.map((item) => (
-          <li
+          <button
+            type="button"
             onClick={() => onChangeCurrency(item)}
             className={`conversion-block__currency ${
-              currency === item ? "active" : ""
+              currency === item ? "conversion-block__currency_active" : ""
             }`}
             key={item}
           >
             {item}
-          </li>
+          </button>
         ))}
-        <li className="conversion-block__currency">
-          <svg
-            className="conversion-block__switch"
-            height="50px"
-            viewBox="0 0 50 50"
-            width="50px"
-          >
-            <rect fill="none" height="50" width="50" />
-            <polygon points="47.25,15 45.164,12.914 25,33.078 4.836,12.914 2.75,15 25,37.25 " />
-          </svg>
-        </li>
+        <button
+          type="button"
+          onClick={onCurrencyChangeButton}
+          className={`conversion-block__currency conversion-block__currency-change ${
+            isCurrencyChangeButton === true
+              ? "conversion-block__currency-change_active conversion-block__currency_active"
+              : ""
+          }`}
+        >
+          <IoIosArrowDown />
+        </button>
       </ul>
       <input
         onChange={(evt) => onChangeValue(evt.target.value)}
@@ -35,4 +46,6 @@ export const Block = ({ value, currency, onChangeValue, onChangeCurrency }) => {
       />
     </form>
   );
-};
+}
+
+export default memo(Block);

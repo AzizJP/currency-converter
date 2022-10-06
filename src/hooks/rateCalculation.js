@@ -1,4 +1,4 @@
-export default function rateCalculation(
+function rateCalculation(
   firstFormCurrency,
   secondFormCurrency,
   currencyRates,
@@ -9,3 +9,5 @@ export default function rateCalculation(
     value
   ).toFixed(3);
 }
+
+export default rateCalculation;

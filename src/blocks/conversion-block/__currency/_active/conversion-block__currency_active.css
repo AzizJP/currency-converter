@@ -1,0 +1,7 @@
+.conversion-block__currency_active {
+  background-color: #16b67f;
+  color: #fff;
+}
+.conversion-block__currency_active:hover {
+  background-color: #16b67f;
+}

@@ -16,8 +16,11 @@
 
 /*conversion section*/
 @import url(./blocks/conversion-blocks/conversion-blocks.css);
+@import url(./blocks/conversion-blocks/__switch/conversion-blocks__switch.css);
 @import url(./blocks/conversion-block/conversion-block.css);
 @import url(./blocks/conversion-block/__currencies/conversion-block__currencies.css);
 @import url(./blocks/conversion-block/__currency/conversion-block__currency.css);
-@import url(./blocks/conversion-block/__switch/conversion-block__switch.css);
+@import url(./blocks/conversion-block/__currency-change/conversion-block__currency-change.css);
+@import url(./blocks/conversion-block/__currency/_active/conversion-block__currency_active.css);
+@import url(./blocks/conversion-block/__currency-change/_active/conversion-block__currency-change_active.css);
 @import url(./blocks/conversion-block/__input/conversion-block__input.css);
