@@ -109,11 +109,13 @@ function App() {
 
   const changeDefaultCurrencyFirstForm = useCallback((item) => {
     setDefaultCurrenciesFirstForm(["RUB", "USD", item]);
+    setFirstFormCurrency(item);
     closeAllPopups();
   }, []);
 
   const changeDefaultCurrencySecondForm = (item) => {
     setDefaultCurrenciesSecondForm(["RUB", "USD", item]);
+    setSecondFormCurrency(item);
     closeAllPopups();
   };
 
