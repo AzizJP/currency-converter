@@ -1,6 +1,11 @@
 import { memo } from "react";
 
-function PopupWithCurrencies({ currensies, isOpen, isSecondFormOpen }) {
+function PopupWithCurrencies({
+  currensies,
+  isOpen,
+  isSecondFormOpen,
+  onPopupCurrency,
+}) {
   const currensiesNew = Object.keys(currensies).slice(0, 21);
 
   return (
@@ -12,7 +17,11 @@ function PopupWithCurrencies({ currensies, isOpen, isSecondFormOpen }) {
       >
         <ul className="popup__list">
           {currensiesNew.map((item) => (
-            <button className="popup__currency-button" key={item}>
+            <button
+              className="popup__currency-button"
+              key={item}
+              onClick={() => onPopupCurrency(item)}
+            >
               {item}
             </button>
           ))}

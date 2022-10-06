@@ -1,8 +1,6 @@
 import { memo } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 
-const defaultCurrencies = ["RUB", "USD", "KZT"];
-
 function Block({
   value,
   currency,
@@ -10,7 +8,9 @@ function Block({
   onChangeCurrency,
   onCurrencyChangeButton,
   isCurrencyChangeButton,
+  defaultCurrencies,
 }) {
+  // const newDefaultCurrencies = defaultCurrencies.current;
   return (
     <form className="conversion-block">
       <ul className="conversion-block__currencies">

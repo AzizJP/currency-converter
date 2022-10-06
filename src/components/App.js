@@ -19,6 +19,13 @@ function App() {
   ] = useState(false);
 
   const currencyRatesRef = useRef({});
+  const [defaultCurrenciesFirstForm, setDefaultCurrenciesFirstForm] = useState([
+    "RUB",
+    "USD",
+    "KZT",
+  ]);
+  const [defaultCurrenciesSecondForm, setDefaultCurrenciesSecondForm] =
+    useState(["RUB", "USD", "KZT"]);
 
   const closeAllPopups = useCallback(() => {
     setIsCurrencyChangeFirstFormButton(false);
@@ -100,6 +107,16 @@ function App() {
     setSecondFormCurrency(firstFormCurrency);
   };
 
+  const changeDefaultCurrencyFirstForm = useCallback((item) => {
+    setDefaultCurrenciesFirstForm(["RUB", "USD", item]);
+    closeAllPopups();
+  }, []);
+
+  const changeDefaultCurrencySecondForm = (item) => {
+    setDefaultCurrenciesSecondForm(["RUB", "USD", item]);
+    closeAllPopups();
+  };
+
   return (
     <div className="page">
       <div className="container">
@@ -112,6 +129,7 @@ function App() {
             onChangeValue={onChangeFirstFormValue}
             onCurrencyChangeButton={handleCurrencyChangeFirstFormButton}
             isCurrencyChangeButton={isCurrencyChangeFirstFormButton}
+            defaultCurrencies={defaultCurrenciesFirstForm}
           />
           <button
             type="button"
@@ -127,15 +145,18 @@ function App() {
             onChangeValue={onChangeSecondFormValue}
             onCurrencyChangeButton={handleCurrencyChangeSecondFormButton}
             isCurrencyChangeButton={isCurrencyChangeSecondFormButton}
+            defaultCurrencies={defaultCurrenciesSecondForm}
           />
           <PopupWithCurrencies
             currensies={currencyRatesRef.current}
             isOpen={isCurrencyChangeFirstFormButton}
+            onPopupCurrency={changeDefaultCurrencyFirstForm}
           />
           <PopupWithCurrencies
             currensies={currencyRatesRef.current}
             isOpen={isCurrencyChangeSecondFormButton}
             isSecondFormOpen={isCurrencyChangeSecondFormButton}
+            onPopupCurrency={changeDefaultCurrencySecondForm}
           />
         </section>
       </div>
