@@ -31,6 +31,10 @@ function App() {
       });
   }, []);
 
+  useEffect(() => {
+    onChangeFirstFormValue(firstFormValue);
+  }, [secondFormCurrency, firstFormCurrency]);
+
   const handleCurrencyChangeFirstFormButton = useCallback(() => {
     setIsCurrencyChangeFirstFormButton(!isCurrencyChangeFirstFormButton);
   }, [isCurrencyChangeFirstFormButton]);
@@ -67,13 +71,10 @@ function App() {
     [firstFormCurrency, secondFormCurrency]
   );
 
-  useEffect(() => {
-    onChangeFirstFormValue(firstFormValue);
-  }, [secondFormCurrency]);
-
-  useEffect(() => {
-    onChangeSecondFormValue(secondFormValue);
-  }, [firstFormCurrency]);
+  const switchCurrensies = () => {
+    setFirstFormCurrency(secondFormCurrency);
+    setSecondFormCurrency(firstFormCurrency);
+  };
 
   return (
     <div className="page">
@@ -88,7 +89,11 @@ function App() {
             onCurrencyChangeButton={handleCurrencyChangeFirstFormButton}
             isCurrencyChangeButton={isCurrencyChangeFirstFormButton}
           />
-          <button type="button" className="conversion-blocks__switch">
+          <button
+            type="button"
+            className="conversion-blocks__switch"
+            onClick={switchCurrensies}
+          >
             <CgArrowsExchangeAltV />
           </button>
           <Block
